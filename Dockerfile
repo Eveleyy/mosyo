@@ -1,5 +1,5 @@
 # Build stage
-FROM gcc:12 AS build
+FROM --platform=$BUILDPLATFORM gcc:12 AS build
 
 # Install CMake and other dependencies
 RUN apt-get update && apt-get install -y \

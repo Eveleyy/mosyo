@@ -39,4 +39,5 @@ message(STATUS "OpenSSL libraries: ${OPENSSL_LIBRARIES}")
 message(STATUS "Opus include dirs: ${OPUS_INCLUDE_DIRS}")
 message(STATUS "Opus libraries: ${OPUS_LIBRARIES}")
 
-# ... any other configurations you might have ...
+enable_testing()
+add_test(NAME MosyoTest COMMAND mosyo test)

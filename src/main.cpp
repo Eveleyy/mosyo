@@ -21,6 +21,13 @@ std::string read_token_from_file(const std::string& filename) {
 }
 
 int main(int argc, char* argv[]) {
+    if (argc > 1 && std::string(argv[1]) == "test") {
+        // Run tests
+        std::cout << "Running tests..." << std::endl;
+        // Add your test logic here
+        return 0;
+    }
+
     std::string token_file = "token";
     
     if (argc > 1) {
