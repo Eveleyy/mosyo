@@ -3,11 +3,14 @@
 
 #include <string>
 #include <dpp/dpp.h>
+#include <memory>
 
 class Bot {
 private:
+    // Bot token
     std::string token;
-    dpp::cluster* bot;
+    // Bot object
+    std::unique_ptr<dpp::cluster> bot;
 
 public:
     // Constructor

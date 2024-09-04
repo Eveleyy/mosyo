@@ -52,7 +52,8 @@ This project is a simple Discord bot named Mosyo, implemented in C++ using the D
 
 4. Run the bot:
    ```
-   ./mosyo
+   ./mosyo                    # Read token from file
+   ./mosyo YOUR_BOT_TOKEN     # Pass token as argument
    ```
 
 ### Using Docker:
@@ -74,3 +75,13 @@ To add new functionality, create new files in the `src/plugins/` directory and i
 ## Security Note
 
 Never commit your `token` file or share your bot token publicly. The `token` file is included in the `.gitignore` to prevent accidental commits.
+
+## Command-line Arguments
+
+You can pass the bot token directly as a command-line argument:
+
+```
+./mosyo YOUR_BOT_TOKEN
+```
+
+This method is useful for testing or when you don't want to create a token file. However, be cautious not to expose your token in shell history or logs.
