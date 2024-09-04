@@ -28,7 +28,7 @@ This project is a simple Discord bot named Mosyo, implemented in C++ using the D
    - Go to the "Bot" section and create a bot
    - Copy the bot token
 
-4. Replace "YOUR_BOT_TOKEN" in `src/main.cpp` with your actual bot token.
+4. Create a file named `token` in the project root directory and paste your bot token into it.
 
 ## Building and Running
 
@@ -64,9 +64,13 @@ This project is a simple Discord bot named Mosyo, implemented in C++ using the D
 
 2. Run the Docker container:
    ```
-   docker run mosyo
+   docker run -v $(pwd)/token:/app/token mosyo
    ```
 
 ## Adding Plugins
 
 To add new functionality, create new files in the `src/plugins/` directory and implement your features as separate classes. Then, integrate them into the `Bot` class as needed.
+
+## Security Note
+
+Never commit your `token` file or share your bot token publicly. The `token` file is included in the `.gitignore` to prevent accidental commits.

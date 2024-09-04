@@ -30,3 +30,6 @@ mosyo
 
 # Ignore DPP library if it's included as a submodule
 include/DPP/
+
+# Ignore commitizen config
+.cz.yaml
