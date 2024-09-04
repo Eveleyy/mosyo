@@ -6,17 +6,18 @@ RUN apt-get update && apt-get install -y \
     cmake \
     libssl-dev \
     libopus-dev \
+    pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /app
 
-# Copy the source code and CMakeLists.txt
+# Copy the entire project
 COPY . .
 
 # Create a build directory and build the project
 RUN mkdir build && cd build && \
-    cmake .. && \
+    cmake -DCMAKE_BUILD_TYPE=Debug .. && \
     make
 
 # Runtime stage
@@ -28,11 +29,13 @@ RUN apt-get update && apt-get install -y \
     libopus0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Set the working directory
 WORKDIR /app
 
 # Copy the built executable from the build stage
-COPY --from=build /app/build/discord-bot .
+COPY --from=build /app/build/mosyo .
 
-# Set the command to run the bot
-CMD ["./discord-bot"]
+# Copy the token file (assuming it's in the project root)
+COPY token .
+
+# Run the bot
+CMD ["./mosyo", "token"]
