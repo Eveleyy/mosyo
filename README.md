@@ -52,8 +52,7 @@ This project is a simple Discord bot named Mosyo, implemented in C++ using the D
 
 4. Run the bot:
    ```
-   ./mosyo                    # Read token from file
-   ./mosyo YOUR_BOT_TOKEN     # Pass token as argument
+   ./mosyo ../token # Read token from file
    ```
 
 ### Using Docker:
