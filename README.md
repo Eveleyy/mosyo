@@ -1,5 +1,7 @@
 # Mosyo - Discord Bot in C++
 
+![CI/CD](https://github.com/Eveleyy/mosyo/actions/workflows/ci-cd.yml/badge.svg)
+
 This project is a simple Discord bot named Mosyo, implemented in C++ using the D++ library.
 
 ## Prerequisites
@@ -64,7 +66,7 @@ This project is a simple Discord bot named Mosyo, implemented in C++ using the D
 
 2. Run the Docker container:
    ```
-   docker run -v $(pwd)/token:/app/token mosyo
+   docker run mosyo
    ```
 
 ## Adding Plugins
