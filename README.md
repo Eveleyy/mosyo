@@ -84,3 +84,14 @@ You can pass the bot token directly as a command-line argument:
 ```
 
 This method is useful for testing or when you don't want to create a token file. However, be cautious not to expose your token in shell history or logs.
+
+## Troubleshooting
+
+If the bot doesn't appear online in your Discord server:
+
+1. Verify that the token in your `token` file is correct and up-to-date.
+2. Ensure that the bot has been added to your server with the correct permissions.
+3. Check if there are any firewall or network issues preventing the bot from connecting to Discord.
+4. Review the console output for any error messages or unexpected behavior.
+
+If issues persist, consider adding more detailed logging to the `Bot::run()` function for further debugging.
