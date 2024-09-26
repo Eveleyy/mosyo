@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(OpenSSL REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(OPUS REQUIRED opus)
+find_package(FFmpeg REQUIRED)
 
 # Add D++ library
 add_subdirectory(include/DPP)
@@ -31,6 +32,7 @@ target_link_libraries(mosyo
     ${OPENSSL_LIBRARIES}
     ${OPUS_LIBRARIES}
     dpp
+    ${FFmpeg_LIBRARIES}
 )
 
 # Print debug information
